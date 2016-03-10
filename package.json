@@ -1,0 +1,38 @@
+{
+  "name": "shiny-broccoli",
+  "version": "1.0.0",
+  "description": "Base template for node and gulp process",
+  "main": "gulpfile.js",
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasaid/shiny-broccoli.git"
+  },
+  "author": "Chris Lucas <christopher.lucas11@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasaid/shiny-broccoli/issues"
+  },
+  "homepage": "https://github.com/lucasaid/shiny-broccoli#readme",
+  "devDependencies": {
+    "commitizen": "2.7.2",
+    "cz-conventional-changelog": "1.1.5",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.0",
+    "gulp-connect": "3.1.0",
+    "gulp-env": "0.4.0",
+    "gulp-imagemin": "2.4.0",
+    "gulp-jade": "1.1.0",
+    "gulp-open": "1.0.0",
+    "gulp-sass": "2.2.0",
+    "gulp-util": "3.0.7",
+    "gulp-watch": "4.3.5",
+    "openport": "0.0.4",
+    "vinyl-paths": "2.1.0"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+}
