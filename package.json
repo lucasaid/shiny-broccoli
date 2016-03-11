@@ -35,7 +35,9 @@
     "openport": "0.0.4",
     "vinyl-paths": "2.1.0"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
