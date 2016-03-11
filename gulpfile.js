@@ -32,7 +32,7 @@ gulp.task('openBrowser', ['getPort', 'getLivePort', 'init', 'connect', 'watch'],
 gulp.task('connect',['getPort', 'getLivePort'], getTask('connect'));
 
 
-gulp.task('init',['getCampaign', 'getPort', 'getLivePort'], function(){
+gulp.task('init',['getPort', 'getLivePort'], function(){
     gulp.run('compile:sass');
     gulp.run('compile:jade');
     gulp.run('compile:javascript');
