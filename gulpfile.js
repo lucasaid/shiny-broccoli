@@ -1,15 +1,14 @@
 var gulp = require('gulp');
 var plugins = require( 'gulp-load-plugins' )();
+var op = require('openport');
 
 GLOBAL.params = {
-    buildPath: './build',
-    sourcePath: './source',
+    buildPath: 'build',
+    sourcePath: 'source',
     port: 8080,
     livePort: 35729,
     defaultBrowser: 'chrome'
 };
-gulp.task('loadFunctions', getTask('_functions'));
-
 
 function getTask(task) {
     return require('./gulp-tasks/' + task)(gulp, plugins, params);
@@ -39,8 +38,23 @@ gulp.task('init',['getPort', 'getLivePort'], function(){
     gulp.run('compress:images');
 });
 
-gulp.task('run', [
-    'loadFunctions',
+gulp.task('run', function(){
+  op.find({
+          startingPort: params.port,
+          endingPort: 9000
+      },
+      function(err, port) {
+          if (err) {
+              console.log(err);
+              return;
+          }
+          params.port = port;
+          gulp.start('run:init')
+      }
+  );
+});
+
+gulp.task('run:init', [
     'getPort',
     'getLivePort',
     'init',
@@ -50,7 +64,6 @@ gulp.task('run', [
 ]);
 
 gulp.task('build', [
-    'loadFunctions',
     'init'
 ]);
 
