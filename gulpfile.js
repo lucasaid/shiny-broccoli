@@ -21,15 +21,15 @@ gulp.task('compile:javascript', getTask('javascript'));
 gulp.task('compile:sass', getTask('sass'));
 gulp.task('compile:jade', getTask('jade'));
 
-gulp.task('getLivePort', ['getCampaign','getPort'], getTask('getLivePort'));
+gulp.task('getLivePort', ['getPort'], getTask('getLivePort'));
 
-gulp.task('getPort', ['getCampaign'], getTask('getPort'));
+gulp.task('getPort', getTask('getPort'));
 
-gulp.task('watch',['getCampaign', 'getPort', 'getLivePort', 'init', 'connect'], getTask('watch'));
+gulp.task('watch',['getPort', 'getLivePort', 'init', 'connect'], getTask('watch'));
 
-gulp.task('openBrowser', ['getCampaign', 'getPort', 'getLivePort', 'init', 'connect', 'watch'], getTask('openBrowser'));
+gulp.task('openBrowser', ['getPort', 'getLivePort', 'init', 'connect', 'watch'], getTask('openBrowser'));
 
-gulp.task('connect',['getCampaign', 'getPort', 'getLivePort'], getTask('connect'));
+gulp.task('connect',['getPort', 'getLivePort'], getTask('connect'));
 
 
 gulp.task('init',['getCampaign', 'getPort', 'getLivePort'], function(){
