@@ -1,6 +1,11 @@
-include partials/_mixins
-include partials/_variables
-html
-    include partials/_head
-    body
-        include partials/_body
+doctype html
+html.no-js(lang='')
+  include partials/_head
+  body
+    // Add your site or application content here
+    include partials/_body
+    script(src='https://code.jquery.com/jquery-1.12.0.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\\/script>')
+    script(src='js/main.js')
+    include partials/_analytics
